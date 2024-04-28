@@ -15,7 +15,7 @@ def sentiment_image(sentiment):
 def get_sentiment_API(User_Tweet):
     try:
         #response = requests.get(url=f"http://127.0.0.1:8000/predict?tweet={User_Tweet}")
-        response = requests.get(url=f"https://herokudeployapp-311fc3f7a4fe.herokuapp.com/predict?tweet={User_Tweet}")
+        response = requests.get(url=f"https://sentimentapi-dcc39a5227fd.herokuapp.com/predict?tweet={User_Tweet}")
         if response.status_code == 200:
             response_json = response.json()
             pred, sentiment = response_json.values()
