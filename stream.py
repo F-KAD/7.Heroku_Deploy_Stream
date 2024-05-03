@@ -15,8 +15,8 @@ def sentiment_image(sentiment):
 def get_sentiment_API(User_Tweet):
     try:
         #response = requests.get(url=f"http://127.0.0.1:8000/predict?tweet={User_Tweet}")
-        response = requests.get(url=f"https://sentimentapi-dcc39a5227fd.herokuapp.com/predict?tweet={User_Tweet}")
-        #response = requests.get(url=f"https://sentimentapi-dcc39a5227fd.herokuapp.com/")
+        #response = requests.get(url=f"https://sentimentapi-dcc39a5227fd.herokuapp.com/predict?tweet={User_Tweet}")
+        response = requests.get(url=f"https://sentimentapi-dcc39a5227fd.herokuapp.com/")
         if response.status_code == 200:
             response_json = response.json()
             pred, sentiment = response_json.values()
@@ -67,8 +67,7 @@ def Render():
     # Bouton pour lancer la prédiction
     col1, col2, col3, col4, col5 = st.columns(5)
     with col3:
-        #if st.button("Predict", help="Click to make prediction"):  
-        if st.button(label="", help="Click to make prediction", key="predict_button"):  
+        if st.button("Predict", help="Click to make prediction"):
             if User_Tweet != "":  
                 get_sentiments(User_Tweet)  
 
