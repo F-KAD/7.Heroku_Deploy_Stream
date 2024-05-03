@@ -68,7 +68,7 @@ def Render():
     col1, col2, col3, col4, col5 = st.columns(5)
     with col3:
         #if st.button("Predict", help="Click to make prediction"):  
-        if st.button("Predict", help="Click to make prediction", key="predict_button", label_visibility="collapsed"):     
+        if st.button(label="", help="Click to make prediction", key="predict_button"):  
             if User_Tweet != "":  
                 get_sentiments(User_Tweet)  
 
